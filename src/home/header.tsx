@@ -9,6 +9,7 @@ export const Header = ({ scrollPos }: { scrollPos: number }) => {
   useEffect(() => {
     if (scrollPos === 0) {
       document.body.classList.add("no-scroll");
+      window.location.hash = "";
     } else {
       document.body.classList.remove("no-scroll");
     }

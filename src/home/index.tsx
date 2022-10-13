@@ -8,8 +8,6 @@ import { Technologies } from "./technologies";
 
 export const HomePage = () => {
   const [scrollPos, setScrollPos] = useState(0);
-  const aboutSection = document.querySelector("#about");
-  const header = document.querySelector("#header");
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
@@ -22,8 +20,6 @@ export const HomePage = () => {
     };
   }, []);
 
-  console.log("about", aboutSection?.clientHeight);
-  console.log("header", header?.clientHeight);
 
   return (
     <>

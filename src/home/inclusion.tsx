@@ -7,12 +7,9 @@ export const Inclusion = () => {
   const showAbout = () => {
     if (aboutSection) aboutSection.scrollIntoView();
   };
+
   return (
-    <section
-      className="info"
-      id="included"
-//       style={{ marginTop: aboutSection?.clientHeight }}
-    >
+    <section className="info" id="included">
       <div className="container">
         <span className="next" onClick={showAbout}>
           <Icon icon="akar-icons:chevron-up" />

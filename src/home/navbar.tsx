@@ -8,8 +8,6 @@ export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
   const navLinks = document.getElementById("navLinks");
   const location = useLocation();
 
-  console.log(location);
-
   const showMenu = () => {
     if (navLinks) navLinks.classList.add("open");
   };
@@ -45,15 +43,10 @@ export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
           <li>
             <a href="/">HOME</a>
           </li>
-          <li>
-            <a
-              href="#about"
-              className={`nav-link ${location.hash === "#about" && "active"}`}
-            >
-              ABOUT
-            </a>
+          <li className={`${location.hash === "#about" && "active"}`}>
+            <a href="#about">ABOUT</a>
           </li>
-          <li>
+          <li className={`${location.hash === "#white-paper" && "active"}`}>
             <a href="#white-paper">WHITEPAPER</a>
           </li>
           <li>
