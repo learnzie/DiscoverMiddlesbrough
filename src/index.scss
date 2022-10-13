@@ -1,0 +1,33 @@
+@import "assets/styles/variable.scss";
+@import "assets/styles/button.scss";
+@import url("https://fonts.googleapis.com/css2?family=K2D:wght@300;400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "K2D", sans-serif;
+  color: $white-100;
+  &.no-scroll {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+p {
+  font-size: 1.6rem;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding-right: var(--bs-gutter-x, 2rem);
+  padding-left: var(--bs-gutter-x, 2rem);
+}
