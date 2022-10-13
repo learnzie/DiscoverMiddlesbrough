@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import logo from "assets/Images/ape-logo-white.svg";
 import logo_dark from "assets/Images/ape-logo-dark.svg";
 import { Icon } from "@iconify/react";
 import { useLocation } from "react-router-dom";
 
 export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
-  const navLinks = document.getElementById("navLinks");
+  const navLinkRef: any = useRef<Element>(null);
   const location = useLocation();
 
   const showMenu = () => {
-    if (navLinks) navLinks.classList.add("open");
+    if (navLinkRef) navLinkRef?.current?.classList.add("open");
   };
 
   const hideMenu = () => {
-    if (navLinks) navLinks.classList.remove("open");
+    if (navLinkRef) navLinkRef?.current?.classList.remove("open");
   };
 
   return (
@@ -33,7 +33,7 @@ export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
           </span>
         </div>
       </div>
-      <div className="nav-link" id="navLinks">
+      <div className="nav-link" id="navLinks" ref={navLinkRef}>
         <Icon
           className="iconify close"
           icon="clarity:times-line"

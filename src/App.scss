@@ -13,7 +13,7 @@
 }
 header {
   min-height: 100vh;
-  background: url("./assets/Images/header-bg.svg");
+  background: url("./assets/Images/header-bg.png");
   background-position: center;
   background-size: cover;
   .inspiration-img {
@@ -660,6 +660,11 @@ footer {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  @media (max-width: 800px) {
+    width: 4.3rem;
+    height: 4.3rem;
+    font-size: 2.8rem;
+  }
 }
 
 .socials-icon {

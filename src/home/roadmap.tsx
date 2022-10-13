@@ -31,7 +31,6 @@ const Card = ({
   );
 };
 
-
 export const Roadmap = () => {
   const [range, setRange] = useState(0);
   const roadmapDiv: Element | null = document.querySelector(".roadmaps");
@@ -72,7 +71,7 @@ export const Roadmap = () => {
         <input
           type="range"
           min="1"
-          max={roadmapDiv?.scrollWidth ? roadmapDiv.scrollWidth - 800 : 500}
+          max={roadmapDiv?.scrollWidth ? roadmapDiv.scrollWidth : undefined}
           value={range}
           className="slider"
           id="myRange"
