@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Card = ({
   title,
@@ -33,30 +33,27 @@ const Card = ({
 
 export const Roadmap = () => {
   const [range, setRange] = useState(0);
-  const roadmapDiv: Element | null = document.querySelector(".roadmaps");
+  const roadmapDiv: any = useRef<Element>(null);
 
   const scrollCards = (value: number) => {
     setRange(value);
-    if (roadmapDiv) {
-      roadmapDiv.scrollTo(value, 0);
-    }
+    roadmapDiv.current.scrollTo(value, 0);
   };
 
   useEffect(() => {
-    if (roadmapDiv) {
-      roadmapDiv.addEventListener("scroll", () => {
-        setRange(roadmapDiv.scrollLeft);
+    const current = roadmapDiv.current;
+    current.addEventListener("scroll", () => {
+      setRange(current.scrollLeft);
+    });
+    return () => {
+      current.removeEventListener("scroll", () => {
+        setRange(current.scrollLeft);
       });
-      return () => {
-        roadmapDiv.removeEventListener("scroll", () => {
-          setRange(roadmapDiv.scrollLeft);
-        });
-      };
-    }
+    };
   }, [roadmapDiv]);
 
   return (
-    <div className="roadmap-wrapper">
+    <div className="roadmap-inner">
       <div className="d-flex align-items-center justify-content-between">
         <div>
           <h3>Appehattan</h3>
@@ -71,7 +68,11 @@ export const Roadmap = () => {
         <input
           type="range"
           min="1"
-          max={roadmapDiv?.scrollWidth ? roadmapDiv.scrollWidth : undefined}
+          max={
+            roadmapDiv.current?.scrollWidth
+              ? roadmapDiv.current.scrollWidth - 300
+              : undefined
+          }
           value={range}
           className="slider"
           id="myRange"
@@ -80,7 +81,7 @@ export const Roadmap = () => {
           }}
         />
       </div>
-      <div className="roadmaps">
+      <div className="roadmaps" ref={roadmapDiv}>
         <Card
           title="2022"
           list={[

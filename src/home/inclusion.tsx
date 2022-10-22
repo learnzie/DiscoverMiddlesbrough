@@ -70,7 +70,11 @@ export const Inclusion = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="container roadmap-wrapper">
         <Roadmap />
+      </div>
+      <div className="container">
         <div className="token-allocation">
           <h3>Token Allocation</h3>
           <div className="allocation-percent">

@@ -3,6 +3,7 @@ import logo from "assets/Images/ape-logo-white.svg";
 import logo_dark from "assets/Images/ape-logo-dark.svg";
 import { Icon } from "@iconify/react";
 import { useLocation } from "react-router-dom";
+// import { Logo } from "logo";
 
 export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
   const navLinkRef: any = useRef<Element>(null);
@@ -17,13 +18,14 @@ export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
   };
 
   return (
-    <nav className={scrollPos > 560 ? "sticky" : undefined}>
+    <nav className={scrollPos > 440 ? "sticky" : undefined}>
       <div className="d-flex gap-5">
         <img
-          src={scrollPos > 560 ? logo_dark : logo}
+          src={scrollPos > 440 ? logo_dark : logo}
           alt="ape-logo-white"
           className="logo"
         />
+        {/* <Logo color={scrollPos > 440 ? '#000' : '#fff'}/> */}
         <div className="d-flex gap-4">
           <span className="socials-icon twitter">
             <Icon icon="akar-icons:twitter-fill" />

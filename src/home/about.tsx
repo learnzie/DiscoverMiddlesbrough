@@ -1,44 +1,24 @@
-import React, { useEffect, useRef } from "react";
+import React, { LegacyRef, useRef } from "react";
 import { Icon } from "@iconify/react";
 import ab_img from "assets/Images/about-img.svg";
+import Apehattan_video from "assets/Images/Apehattan.mp4";
 
-export const About = () => {
-  var slides = document.querySelectorAll(".slides");
+export const About = ({
+  slide1Ref,
+  slide2Ref,
+}: {
+  slide1Ref: LegacyRef<HTMLDivElement> | undefined;
+  slide2Ref: LegacyRef<HTMLDivElement> | undefined;
+}) => {
   const aboutRef: any = useRef(null);
 
-  const animateView = () => {
-    if (slides) {
-      const windowHeight = window.innerHeight;
-      slides.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 150) {
-          element.classList.add("slide_in");
-        } else {
-          element.classList.remove("slide_in");
-        }
-      });
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      animateView();
-    });
-    return () => {
-      document.removeEventListener("scroll", () => {
-        animateView();
-      });
-    };
-  }, []);
-
   const showNext = () => {
-    document.body.classList.remove("no-scroll");
     const includedSection = document.querySelector("#included");
     if (includedSection) includedSection.scrollIntoView();
   };
 
   const showHeader = () => {
-    window.location.hash = ''
+    window.location.hash = "";
     window.scrollTo(0, 0);
   };
 
@@ -49,7 +29,7 @@ export const About = () => {
           <Icon icon="akar-icons:chevron-up" />
         </span>
         <div className="row">
-          <div className="col-md-6 col-12 slides slide_in left">
+          <div className="col-md-6 col-12 slides slide_in left" ref={slide1Ref}>
             <h2>About Apehattan</h2>
             <div className="d-flex gap-4 my-5">
               <button className="btn btn-sm btn-outline">Whitepaper</button>
@@ -81,8 +61,20 @@ export const About = () => {
               earn.
             </p>
           </div>
-          <div className="col-md-6 col-12 slides slide_in right">
-            <img src={ab_img} alt="About-img" />
+          <div
+            className="col-md-6 col-12 slides slide_in right"
+            ref={slide2Ref}
+          >
+            <video
+              width="100%"
+              height="auto"
+              poster={ab_img}
+              controls
+              className="click"
+            >
+              <source src={Apehattan_video} type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
           </div>
         </div>
         <div className="text-center my-5">

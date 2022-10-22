@@ -11,14 +11,17 @@
     color: $green-100;
   }
 }
+.click {
+  cursor: pointer;
+}
 header {
-  min-height: 100vh;
+  min-height: 107vh;
   background: url("./assets/Images/header-bg.png");
   background-position: center;
   background-size: cover;
   .inspiration-img {
-    width: 16rem;
-    height: 24rem;
+    width: 18rem;
+    height: 26rem;
     position: absolute;
     bottom: 15%;
     right: 5%;
@@ -26,6 +29,7 @@ header {
   .next {
     font-size: 6rem;
     animation: bouncing 2s ease-in infinite;
+    padding-top: 16vh;
   }
   @keyframes bouncing {
     0% {
@@ -44,15 +48,26 @@ header {
       transform: translateY(75vh);
     }
   }
+
+  @media (max-width: 897px) {
+    background-position: 29%;
+    .inspiration-img {
+      width: 16rem;
+      height: 24rem;
+    }
+  }
 }
 nav {
   display: flex;
   justify-content: space-between;
+  background-color: transparent;
   padding: 1rem 4rem;
   align-items: center;
   position: sticky;
+  transition: all ease 0.3s;
   top: 0;
   z-index: 5;
+  margin-top: -13rem;
   .logo {
     width: 19rem;
     object-fit: contain;
@@ -93,6 +108,7 @@ nav {
         color: $white-000;
         text-decoration: none;
         font-size: 1.6rem;
+        transition: all ease 0.3s;
         &:hover {
           color: $white-000;
         }
@@ -102,6 +118,7 @@ nav {
         height: 2px;
         width: 0%;
         background: $white-000;
+        transition: all ease 0.3s;
         display: block;
         transition: 0.5s;
       }
@@ -117,9 +134,9 @@ nav {
     }
   }
   &.sticky {
-    background: $white-000;
+    background-color: $white-000;
     box-shadow: 0 0.4rem 0.5rem rgba(179, 179, 179, 0.5);
-
+    padding-block: 1.5rem;
     .nav-link {
       li {
         a {
@@ -299,6 +316,7 @@ nav {
       border-radius: 0.8rem;
       border: transparent 2px solid;
       transition: all ease 0.6s;
+      min-height: 24rem;
       h3 {
         margin-bottom: 1.5rem;
         font-weight: 800;
@@ -354,182 +372,199 @@ nav {
 }
 
 .roadmap-wrapper {
-  margin-top: 9rem;
-  background-color: black;
-  background-image: url("./assets/Images/gradient.svg");
-  padding: 4rem;
-  border-radius: 1.8rem;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  .slide-container {
-    width: 90%;
-    margin: auto;
-    margin-top: 3rem;
-    .slider {
-      -webkit-appearance: none;
-      width: 100%;
-      height: 1rem;
-      background: rgba($color: $green-200, $alpha: 0.3);
-      outline: none;
-      opacity: 0.7;
-      -webkit-transition: 0.2s;
-      transition: opacity 0.2s;
-      border-radius: 5rem;
-      &:hover {
-        opacity: 1;
-      }
-      &::-webkit-slider-thumb {
+  .roadmap-inner {
+    margin-top: 9rem;
+    background-color: $black-000;
+    background-image: url("./assets/Images/gradient.svg");
+    padding: 4rem;
+    border-radius: 1.8rem;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    .slide-container {
+      width: 90%;
+      margin: auto;
+      margin-top: 3rem;
+      .slider {
         -webkit-appearance: none;
-        appearance: none;
-        width: 25px;
-        height: 25px;
-        background: $green-200;
-        border-radius: 0.5rem;
-        cursor: pointer;
-      }
-      &::-moz-range-thumb {
-        width: 25px;
-        height: 25px;
-        background: $green-200;
-        border-radius: 0.5rem;
-        cursor: pointer;
+        width: 100%;
+        height: 1rem;
+        background: rgba($color: $green-200, $alpha: 0.3);
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+        border-radius: 5rem;
+        &:hover {
+          opacity: 1;
+        }
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          background: $green-200;
+          border-radius: 0.5rem;
+          cursor: pointer;
+        }
+        &::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          background: $green-200;
+          border-radius: 0.5rem;
+          cursor: pointer;
+        }
       }
     }
-  }
 
-  h3 {
-    font-size: 3rem;
-    font-weight: 700;
-    &.green {
-      color: $green-200;
-    }
-  }
-  .note {
-    font-size: 1.2rem;
-    margin: 0;
-  }
-  .roadmaps {
-    font-family: "Syne", sans-serif;
-    margin-block: 5rem;
-    display: flex;
-    overflow: scroll;
-    column-gap: 8.4rem;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    .roadmap-card {
-      min-width: 38rem;
-      max-width: 100%;
-      min-height: 51rem;
-      border-radius: 1.5rem;
-      padding: 3.5rem 2.5rem;
+    h3 {
+      font-size: 3rem;
       font-weight: 700;
-      background: rgba(143, 208, 119, 0.1);
-      @media (max-width: 500px) {
-        min-width: 30rem;
+      &.green {
+        color: $green-200;
       }
-      .title {
-        border-radius: 0.6rem;
-        font-size: 2rem;
-        color: $black-000;
-        padding: 0rem 1.6rem;
-        width: fit-content;
-        margin-bottom: 4rem;
-        margin-left: 2rem;
-        background: $green-200;
-        &::before {
-          content: "";
-          position: absolute;
-          width: 0.2rem;
-          height: 0.8rem;
-          left: 1.6rem;
-          top: 2.9rem;
-          background-color: $green-200;
-        }
+    }
+    .note {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    .roadmaps {
+      font-family: "Syne", sans-serif;
+      margin-block: 5rem;
+      display: flex;
+      overflow: scroll;
+      column-gap: 8.4rem;
+      &::-webkit-scrollbar {
+        display: none;
       }
-      ul {
-        position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          background-color: $green-200;
-          width: 0.9rem;
-          height: 0.9rem;
-          left: 3.3rem;
-          bottom: -2rem;
-          border-radius: 50%;
-        }
-      }
-      li,
-      .title {
-        position: relative;
-        &:after {
-          content: "";
-          position: absolute;
-          width: 0.2rem;
-          height: 100%;
-          left: 1.6rem;
-          top: 3.7rem;
-          background-color: $green-200;
-        }
-      }
-      li {
-        list-style: none;
-        .content {
-          font-size: 1.8rem;
-          color: $white-000;
-          margin-left: 4rem;
-          margin-block: 2rem;
-          min-height: 11rem;
-        }
-        .tag {
-          color: $black-000;
-          padding: 0.6rem 1.5rem;
-          border-radius: 1.5rem;
-          background-color: $white-000;
-          width: fit-content;
-        }
+      .roadmap-card {
+        min-width: 38rem;
+        max-width: 100%;
+        min-height: 51rem;
+        border-radius: 1.5rem;
+        padding: 3.5rem 2.5rem;
+        font-weight: 700;
+        background: rgba(143, 208, 119, 0.1);
 
-        &:first-of-type {
-          .content {
-            color: $yellow-200;
-          }
-          .tag {
-            background-color: $yellow-200;
+        .title {
+          border-radius: 0.6rem;
+          font-size: 2rem;
+          color: $black-000;
+          padding: 0rem 1.6rem;
+          width: fit-content;
+          margin-bottom: 4rem;
+          margin-left: 2rem;
+          background: $green-200;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 0.2rem;
+            height: 0.8rem;
+            left: 1.6rem;
+            top: 2.9rem;
+            background-color: $green-200;
           }
         }
-        &:last-of-type {
+        ul {
+          position: relative;
           &::after {
-            height: 90%;
+            content: "";
+            position: absolute;
+            background-color: $green-200;
+            width: 0.9rem;
+            height: 0.9rem;
+            left: 3.3rem;
+            bottom: -2rem;
+            border-radius: 50%;
           }
         }
-      }
-      &:nth-child(even) {
-        background: rgba(151, 71, 255, 0.1);
-        ul,
         li,
         .title {
-          &:after,
-          &::before {
-            background: $purple-100;
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            width: 0.2rem;
+            height: 100%;
+            left: 1.6rem;
+            top: 3.7rem;
+            background-color: $green-200;
           }
         }
-        .title {
-          background: $purple-100;
-          color: $white-000;
-        }
         li {
+          list-style: none;
+          .content {
+            font-size: 1.8rem;
+            color: $white-000;
+            margin-left: 4rem;
+            margin-block: 2rem;
+            min-height: 11rem;
+          }
+          .tag {
+            color: $black-000;
+            padding: 0.6rem 1.5rem;
+            border-radius: 1.5rem;
+            background-color: $white-000;
+            width: fit-content;
+          }
+
           &:first-of-type {
             .content {
-              color: $green-200;
+              color: $yellow-200;
             }
             .tag {
-              background-color: $green-200;
+              background-color: $yellow-200;
+            }
+          }
+          &:last-of-type {
+            &::after {
+              height: 90%;
+            }
+          }
+        }
+        &:nth-child(even) {
+          background: rgba(151, 71, 255, 0.1);
+          ul,
+          li,
+          .title {
+            &:after,
+            &::before {
+              background: $purple-100;
+            }
+          }
+          .title {
+            background: $purple-100;
+            color: $white-000;
+          }
+          li {
+            &:first-of-type {
+              .content {
+                color: $green-200;
+              }
+              .tag {
+                background-color: $green-200;
+              }
+            }
+          }
+        }
+        @media (max-width: 500px) {
+          min-width: 33rem;
+          .title {
+            font-size: 1.8rem;
+          }
+          li {
+            .content {
+              font-size: 1.6rem;
             }
           }
         }
       }
+    }
+  }
+  @media (max-width: 700px) {
+    padding: 0;
+    .roadmap-inner {
+      padding-inline: 3rem;
     }
   }
 }
