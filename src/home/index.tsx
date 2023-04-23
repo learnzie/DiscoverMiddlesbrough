@@ -3,7 +3,6 @@ import { About } from "./about";
 import { Footer } from "./footer";
 import { Header } from "./header";
 import { Inclusion } from "./inclusion";
-import ScrollToTop from "./ScrollToTop";
 import { Technologies } from "./technologies";
 
 export const HomePage = () => {
@@ -46,7 +45,6 @@ export const HomePage = () => {
       <Inclusion />
       <Technologies />
       <Footer />
-      <ScrollToTop show={scrollPos > 1200} />
     </>
   );
 };

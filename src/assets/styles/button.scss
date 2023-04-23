@@ -1,57 +1,25 @@
 @import "./variable.scss";
 
 .btn {
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
+  border-radius: 1rem;
+  font-size: 1rem;
   text-align: center;
   justify-content: center;
   padding: 1rem;
 }
-.btn-sm {
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-.btn-md {
-  min-height: 3.5rem;
-  min-width: 8rem;
-  font-size: 1.6rem;
-  padding: 0.6rem 2rem;
-}
 .btn-lg {
-  min-height: 4rem;
-  min-width: 10rem;
-  padding: 1rem 3rem;
+  min-height: 3rem;
+  min-width: 8rem;
+  padding: 1.2rem;
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 500;
 }
-.btn-green {
-  background-color: $green-100;
+.btn-pink {
+  background-color: #ff6745;
   color: $white-100;
   transition: all ease 0.3s;
   &:hover {
     color: $white-100;
-    background-color: darken($color: $green-100, $amount: 5);
-  }
-}
-.btn-purple {
-  background: $purple-200;
-  color: $white-100;
-  transition: all ease 0.3s;
-  border-radius: 1rem;
-  &:hover {
-    background-color: darken($color: $purple-200, $amount: 5);
-    color: $white-100;
-  }
-}
-
-.btn-outline {
-  color: $green-200;
-  background: transparent;
-  border: 0.01rem solid $green-100;
-  transition: all ease 0.3s;
-  &:hover {
-    background-color: $green-100;
-    color: $white-100;
+    background-color: darken($color: #ff6745, $amount: 5);
   }
 }

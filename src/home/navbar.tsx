@@ -20,12 +20,11 @@ export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
   return (
     <nav className={scrollPos > 440 ? "sticky" : undefined}>
       <div className="d-flex gap-5">
-        <img
+        {/* <img
           src={scrollPos > 440 ? logo_dark : logo}
           alt="ape-logo-white"
           className="logo"
         />
-        {/* <Logo color={scrollPos > 440 ? '#000' : '#fff'}/> */}
         <div className="d-flex gap-4">
           <span className="socials-icon twitter">
             <Icon icon="akar-icons:twitter-fill" />
@@ -33,7 +32,8 @@ export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
           <span className="socials-icon discord">
             <Icon icon="carbon:logo-discord" />
           </span>
-        </div>
+        </div> */}
+        <h1>Discover Middlesbrough</h1>
       </div>
       <div className="nav-link" id="navLinks" ref={navLinkRef}>
         <Icon
@@ -42,23 +42,17 @@ export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
           onClick={hideMenu}
         />
         <ul className="mb-0">
-          <li>
-            <a href="/">HOME</a>
-          </li>
-          <li className={`${location.hash === "#about" && "active"}`}>
-            <a href="#about">ABOUT</a>
-          </li>
           <li className={`${location.hash === "#white-paper" && "active"}`}>
-            <a href="#white-paper">WHITEPAPER</a>
+            <a href="#white-paper">Attractions</a>
           </li>
           <li>
-            <a href="/">FAQs</a>
+            <a href="/">History</a>
           </li>
           <li>
-            <a href="/">TEAM</a>
+            <a href="/">Scenery</a>
           </li>
           <li className="underline-none">
-            <button className="btn-green btn btn-md">Launch App</button>
+            <button className="btn-pink btn btn-lg">Contact us</button>
           </li>
         </ul>
       </div>
