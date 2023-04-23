@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { About } from "../components/about";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
-import { Inclusion } from "../components/inclusion";
+import { Inclusion } from "../components/attractions";
 import { ContactUs } from "../components/contactUs";
 
 export const HomePage = () => {

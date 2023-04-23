@@ -5,7 +5,7 @@ export const ContactUs = () => {
   return (
     <section className="contact-page-wrapper">
       <div className="container">
-        <div className="row gy-5 text-center my-9">
+        <div className="row gy-5 text-center">
           <div className="col-md-4 col-sm-6">
             <Icon className="icon" icon="ion:location-outline" />
             <h2>VISIT US</h2>

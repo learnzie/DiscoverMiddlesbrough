@@ -80,7 +80,7 @@ nav {
   display: flex;
   justify-content: space-between;
   background-color: #fefdff;
-  padding: 1rem 4rem;
+  padding: 0rem 4rem;
   align-items: center;
   position: sticky;
   transition: all ease 0.3s;
@@ -132,7 +132,6 @@ nav {
   &.sticky {
     background-color: #fff;
     box-shadow: 0 0.4rem 0.5rem rgba(179, 179, 179, 0.5);
-    padding-block: 1.5rem;
     .nav-link {
       li {
         a {
@@ -202,27 +201,45 @@ nav {
   .iconic-wrapper {
     background: url("./assets/Images/section-2-background.svg");
     height: 30vh;
-    overflow: hidden;
     border-radius: 2rem;
     background-position: center;
     background-size: cover;
     margin-top: 12rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding-inline: 5rem 2rem;
     position: relative;
-    img.annie-img {
-      width: 13rem;
-      margin-top: -6.7rem;
+    @media (min-width: 991px) {
+      p {
+        font-size: 1.3rem;
+        width: 40%;
+        margin: auto;
+        padding-top: 5rem;
+      }
+      img.annie-img {
+        position: absolute;
+        top: -12%;
+        left: 7%;
+        width: 17rem;
+      }
+      img.priscilla-img {
+        position: absolute;
+        top: -33%;
+        right: 5%;
+        width: 23.5rem;
+      }
     }
     @media (max-width: 991px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
       min-height: 100vh;
       flex-direction: column-reverse;
+      p {
+        font-size: 1.6rem;
+        width: 80%;
+        margin-inline: auto;
+      }
       img.annie-img {
-        width: 20rem;
-        margin-top: 1rem;
+        display: none;
       }
     }
   }
@@ -381,7 +398,7 @@ nav {
   }
 }
 .contact-page-wrapper {
-  margin-top: 5rem;
+  margin-block: 9rem;
   .icon {
     font-size: 4rem;
     color: #000000;
