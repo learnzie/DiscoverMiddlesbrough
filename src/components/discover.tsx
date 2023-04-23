@@ -4,7 +4,7 @@ import priscilla from "assets/Images/priscilla-du-preez-7etIYqqw2jU-unsplash-rem
 
 export const About = () => {
   return (
-    <section className="about" id="about">
+    <section className="discover" id="about">
       <div className="container">
         <div className="iconic-wrapper">
           <img className="annie-img" src={annie} alt="annie-spratt" />

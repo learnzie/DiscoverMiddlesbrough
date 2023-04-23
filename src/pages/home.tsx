@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { About } from "../components/about";
+import { About } from "../components/discover";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { Inclusion } from "../components/attractions";
