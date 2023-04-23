@@ -34,12 +34,19 @@ header {
     }
     .sara-dub {
       width: 43%;
+      @media (min-width: "900px") {
+        text-align: end;
+      }
+
+      @media (min-width: "1200px") {
+        text-align: center;
+      }
       img {
         width: 30rem;
       }
     }
     @media (max-width: 769px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
       gap: 2rem;
       .people,
       .sara-dub {
