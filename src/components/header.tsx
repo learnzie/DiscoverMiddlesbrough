@@ -1,17 +1,9 @@
 import React from "react";
-import inspo from "assets/Images/Inspo.svg";
 import sara from "assets/Images/Group 1.svg";
 import { Icon } from "@iconify/react";
 import { Navbar } from "./navbar";
 
 export const Header = ({ scrollPos }: { scrollPos: number }) => {
-  const aboutSection = document.querySelector("#about");
-
-  const showNext = () => {
-    window.location.hash = "#about";
-    if (aboutSection) aboutSection.scrollIntoView();
-  };
-
   return (
     <>
       <Navbar scrollPos={scrollPos} />
@@ -26,20 +18,21 @@ export const Header = ({ scrollPos }: { scrollPos: number }) => {
                 Whether you're looking for world-class attractions, rich
                 history, or stunning scenery, you'll find it all here.
               </p>
-              <button className="btn btn-lg btn-launch btn-pink">
-                Contact us
-                <Icon className="ms-2" icon="material-symbols:navigate-next" />
-              </button>
+              <a href="#contact-us">
+                <button className="btn btn-lg btn-launch btn-pink">
+                  Contact us
+                  <Icon
+                    className="ms-2"
+                    icon="material-symbols:navigate-next"
+                  />
+                </button>
+              </a>
             </div>
             <div className="sara-dub">
               <img src={sara} alt="sara-dubler" />
             </div>
           </div>
         </div>
-        {/* <span className="next" onClick={showNext}>
-          <Icon icon="akar-icons:chevron-down" />
-        </span> */}
-        {/* <img className="inspiration-img" src={inspo} alt="Inspo" /> */}
       </header>
     </>
   );

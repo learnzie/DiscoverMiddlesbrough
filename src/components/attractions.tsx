@@ -3,16 +3,14 @@ import { AttractionCard } from "./attractionCard";
 
 export const Inclusion = () => {
   return (
-    <section className="attraction" id="included">
-      <div className="grid-wrapper">
-        <AttractionCard />
-        <AttractionCard />
-        <AttractionCard />
-        <AttractionCard />
-        <AttractionCard />
-        <AttractionCard />
-        <AttractionCard />
-      </div>
+    <section className="attraction grid-wrapper" id="attractions">
+      <AttractionCard />
+      <AttractionCard />
+      <AttractionCard />
+      <AttractionCard />
+      <AttractionCard />
+      <AttractionCard />
+      <AttractionCard />
     </section>
   );
 };

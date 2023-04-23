@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 
 export const ContactUs = () => {
   return (
-    <section className="contact-page-wrapper">
+    <section className="contact-page-wrapper" id="contact-us">
       <div className="container">
         <div className="row gy-5 text-center">
           <div className="col-md-4 col-sm-6">
@@ -25,7 +25,8 @@ export const ContactUs = () => {
             <Icon className="icon" icon="fluent:call-48-regular" />
             <h2>CALL US</h2>
             <p>
-              +44 0494 044 0494 <br /> Monday - Saturday 9am to 7pm (UK time)
+              <a href="tel:+4404940440494">+4404940440494</a> <br /> Monday -
+              Saturday 9am to 7pm (UK time)
             </p>
           </div>
         </div>

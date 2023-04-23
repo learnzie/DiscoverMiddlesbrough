@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Icon } from "@iconify/react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 // import { Logo } from "logo";
 
 export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
@@ -17,9 +17,9 @@ export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
 
   return (
     <nav className={scrollPos > 440 ? "sticky" : undefined}>
-      <div>
+      <Link to="/">
         <h1>Discover Middlesbrough</h1>
-      </div>
+      </Link>
       <div className="nav-link" id="navLinks" ref={navLinkRef}>
         <Icon
           className="iconify close"
@@ -27,17 +27,14 @@ export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
           onClick={hideMenu}
         />
         <ul className="mb-0">
-          <li className={`${location.hash === "#white-paper" && "active"}`}>
-            <a href="#white-paper">Attractions</a>
+          <li className={`${location.hash === "#attractions" && "active"}`}>
+            <a href="#attractions">Attractions</a>
           </li>
-          <li>
-            <a href="/">History</a>
-          </li>
-          <li>
-            <a href="/">Scenery</a>
-          </li>
+
           <li className="underline-none">
-            <button className="btn-pink btn btn-lg">Contact us</button>
+            <a href="/#contact-us">
+              <button className="btn-pink btn btn-lg">Contact us</button>
+            </a>
           </li>
         </ul>
       </div>
