@@ -209,7 +209,7 @@ nav {
   }
 }
 
-//About section
+//discover section
 .discover {
   .iconic-wrapper {
     background: url("./assets/Images/section-2-background.svg");
@@ -410,6 +410,21 @@ nav {
     }
   }
 }
+.articles {
+  img {
+    width: 100%;
+  }
+  h1 {
+    font-size: 3.5rem;
+    color: #212227;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  p {
+    font-size: 1.4rem;
+    color: #212227;
+  }
+}
 .contact-page-wrapper {
   margin-block: 9rem;
   .icon {
@@ -496,7 +511,6 @@ nav {
     }
   }
 }
-
 footer {
   padding: 2.4rem;
   font-size: 1.6rem;
