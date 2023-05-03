@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Icon } from "@iconify/react";
 import { Link, useLocation } from "react-router-dom";
-// import { Logo } from "logo";
+import Logo from "assets/Images/lana.png";
 
 export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
   const navLinkRef: any = useRef<Element>(null);
@@ -18,7 +18,8 @@ export const Navbar = ({ scrollPos }: { scrollPos: number }) => {
   return (
     <nav className={scrollPos > 440 ? "sticky" : undefined}>
       <Link to="/">
-        <h1>Discover Middlesbrough</h1>
+        {/* <h1>Discover Middlesbrough</h1> */}
+        <img className="logo-img" src={Logo} alt="gabriel-logo" />
       </Link>
       <div className="nav-link" id="navLinks" ref={navLinkRef}>
         <Icon

@@ -11,7 +11,7 @@ export const Header = ({ scrollPos }: { scrollPos: number }) => {
         <div className="container">
           <div className="flex-wrapper">
             <div className="people">
-              <h1>Welcome to Middlesbrough</h1>
+              <h1>Gabriel Explores Middlesbrough</h1>
               <p>
                 Located in the heart of North Yorkshire, Middlesbrough is a
                 vibrant and dynamic city that has something for everyone.
